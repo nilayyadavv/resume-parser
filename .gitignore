@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets and local output
+credentials.json
+google-credentials.json
+*.secret.json
+.env
+parsed_resumes.csv

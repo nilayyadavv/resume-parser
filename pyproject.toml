@@ -1,0 +1,29 @@
+[project]
+name = "resume-parser"
+version = "0.1.0"
+description = "Parse a folder of resumes and write name, email, GitHub, and LinkedIn to a Google Sheet."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "gspread>=6.1.4",
+    "google-auth>=2.35.0",
+    "pypdf>=5.1.0",
+    "python-docx>=1.1.2",
+]
+
+[project.scripts]
+resume-parser = "resume_parser.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.9,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "fpdf2>=2.8.2",
+    "pytest>=8.3.4",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
