@@ -12,3 +12,5 @@ google-credentials.json
 *.secret.json
 .env
 parsed_resumes.csv
+eval_parsed_resumes.csv
+eval_resumes/

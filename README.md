@@ -6,14 +6,14 @@ Parse a folder of PDF and DOCX resumes and write **name, email, GitHub, and Link
 
 | Column | How it is found |
 | --- | --- |
-| Name | First prominent line, or the filename if that fails |
-| Email | First email-shaped token |
-| GitHub | First `github.com/<user>` URL (scheme optional) |
-| LinkedIn | First `linkedin.com/in/...` or `linkedin.com/pub/...` URL |
+| Name | First prominent name line, including first/last split across lines |
+| Email | First real email (placeholder `yourname@example.com` values ignored) |
+| GitHub | First `github.com/<user>` URL in text or clickable links |
+| LinkedIn | First `linkedin.com/in/...` or `linkedin.com/pub/...` URL in text or clickable links |
 | Source file | Original filename |
 | Status | `ok`, `no GitHub or LinkedIn found`, or a read error |
 
-It does not call the GitHub or LinkedIn APIs. Links are taken from the resume text only.
+It does not call the GitHub or LinkedIn APIs. Links come from visible text plus PDF/DOCX hyperlinks.
 
 ## Install
 
